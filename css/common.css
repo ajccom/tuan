@@ -1,0 +1,294 @@
+/* reset */
+* {padding: 0; margin: 0; -webkit-tap-highlight-color: rgba(0,0,0,0);}
+html {font-family: '微软雅黑', Airal; height: 100%; width: 100%; overflow: hidden; position: relative;}
+body {height: 100%; width: 100%;}
+ol, ul, li {list-style: none}
+input {font-family: '微软雅黑', Airal;}
+a {text-decoration: none; color: #000}
+input[type="text"]:focus, input[type="password"]:focus, textarea:focus {outline: none; -webkit-box-shadow: none}
+input[type="checkbox"]:focus,input[type="submit"]:focus,input[type="reset"]:focus, input[type="radio"]:focus {outline: none}
+
+/* common */
+.red {color: #f14f34}
+.price, del {font-family: Verdana}
+.normal-btn {border: 1px solid #c44b16; border-radius: 5px; text-align: center; color: #fff; text-shadow: 0 0 1px #000; font-size: 14px; height: 30px; line-height: 30px; padding: 0 7px;
+background-image: -moz-linear-gradient(top, #fc9f19, #ea6507);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fc9f19), color-stop(1, #ea6507));}
+header {text-align: center; height: 45px; font-size: 16px; color: #fff; line-height: 45px; position: relative;
+background-image: -moz-linear-gradient(top, #ffa703, #df7f2a);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffa703), color-stop(1, #df7f2a));}
+header .back {position: absolute; height: 30px; width: 50px; text-align: center; color: #fff; text-shadow: 0 0 1px #000; line-height: 30px; top: 7px; left: 10px; font-size: 14px;
+background-image: url(../img/common/back.png);
+background-position: center center;
+background-repeat: none;
+background-size: 100% auto;}
+footer {height: 50px; width: 100%; overflow: hidden; position: absolute; bottom: 0; left: 0; z-index: 1000;}
+footer ul {position: relative; height: 50px; overflow: hidden}
+footer ul li {width: 20%; float: left; height: 50px;}
+footer ul li a {display: block; margin: 0 auto; height: 50px; width: 100%; text-indent: -999em;
+background-image: url(../img/common/footer.jpg);
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: auto 100px;}
+footer ul .p a {background-position: 0 -50px}
+footer ul .k a {background-position: 25% -50px}
+footer ul .c a {background-position: 50% -50px}
+footer ul .u a {background-position: 75% -50px}
+footer ul .m a {background-position: 100% -50px}
+footer ul .p a.current {background-position: 0 0}
+footer ul .k a.current {background-position: 25% 0}
+footer ul .c a.current {background-position: 50% 0}
+footer ul .u a.current {background-position: 75% 0}
+footer ul .m a.current {background-position: 100% 0}
+
+.D1maTempPage {display: none; width: 100%; border: 1px solid #000; background: #fff; position: absolute; left: 0; top: 0; z-index: 1; height: 100%; overflow: hidden;}
+.current,
+.prev-page {display: block;}
+.current {z-index: 2;}
+.prev-page {z-index: 1}
+#page-wrapper {width: 100%; height: 100%; position: relative; z-index: 1; overflow: hidden;}
+
+/*mask*/
+.cmMask {width: 100%; height: 100%; display: none; background: rgba(255, 255, 255, 0.5); position: absolute; top: 0; left: 0; z-index: 1000;}
+
+/*loading*/
+.cmLoading {position: absolute; left: -999em; top: -999em; display: none; width: 25%; border-radius: 10px; padding: 5px; background: #ef7e26; z-index: 1100}
+.cmLoading img {width: 100%;}
+
+/*pro-list*/
+.pro-list {}
+.pro-list header {position: absolute; z-index: 2; width: 100%;}
+#pro-list-wrapper {position: absolute; top: 75px; bottom: 50px; overflow:auto; width: 100%; z-index:1;}
+.pro-list .rank-bar {position: absolute; z-index: 2; width: 100%; height: 30px; top: 45px; left: 0;}
+.pro-list .rank-bar ul {height: 30px; line-height: 30px;
+background-image: -moz-linear-gradient(top, #fcfcfc, #e8e8e8);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fcfcfc), color-stop(1, #e8e8e8)); border-bottom: 1px solid #bbb; position: relative; z-index: 5}
+.pro-list .rank-bar ul ul {position: absolute; display: none; width: 100%; top: 100%; left: 0; border-bottom: 0 none; height: auto}
+.pro-list .rank-bar ul li {color: #444; font-size: 16px; text-align: center; height: 30px; line-height: 30px; width: 33%; position: relative; float: left;}
+.pro-list .rank-bar ul>li:nth-child(3):before {display: none}
+.pro-list .rank-bar ul li span img {width: 14px; vertical-align: middle; margin-left: 3px;}
+.pro-list .rank-bar ul li:nth-child(3) span img {width: auto; height: 14px;}
+.pro-list .rank-bar li:before {position: absolute; content: ''; width: 1px; height: 30px; right: 0; top: 0; background: #bbb;}
+.pro-list .rank-bar li.current {}
+.pro-list .rank-bar li.current .dropdown {display: block;}
+.pro-list .rank-bar ul .dropdown li {float: none; width: auto; background: #f1f1f1; font-size: 14px; border-bottom: 1px solid #bbb; border-left: 1px solid #bbb; border-right: 1px solid #bbb;}
+.pro-list .rank-bar ul .dropdown li:before {display: none}
+.pro-list .rank-bar ul .dropdown li.current {
+background-image: -moz-linear-gradient(top, #dccdc0, #eae1d0);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #dccdc0), color-stop(1, #eae1d0));}
+.pro-list .list {position: absolue; width: 100%;}
+.pro-list .list li {overflow: hidden; border-bottom: 1px solid #ddd; padding: 5px 2%; line-height: 1.2em; height: 100px;
+background-image: url(../img/common/go.png);
+background-position: 95% center;
+background-repeat: no-repeat;
+background-size: 14px auto;}
+.pro-list .list .p {float: left; width: 33%; border: 1px solid #ddd;}
+.pro-list .list .p img {width: 100%}
+.pro-list .list .i {float: left; width: 60%;}
+.pro-list .list .name {font-size: 14px; color: #000; line-height: 1.2em; max-height: 2.4em; overflow: hidden; padding: 5px 3px; height: 3em;}
+.pro-list .list .detail {height: 28px; line-height: 28px; background: #e2e2e2}
+.pro-list .list .price {color: #f14f34; font-size: 20px;}
+.pro-list .list del {font-size: 12px; color: #999; padding: 3px 0 0 5px}
+.pro-list .list .go img {height: 28px; float: right}
+.pro-list .list .feedback {color: #999; font-size: 12px; padding-left: 5px;}
+
+/*pro-info*/
+.pro-info {}
+.pro-info header {position: absolute; z-index: 2; width: 100%;}
+#pro-info-wrapper {position: absolute; top: 45px; bottom: 50px; overflow:auto; width: 100%; z-index:1;}
+#pro-info-wrapper .scroller {position:absolute; z-index:1; width: 100%}
+.pro-info .share {position: absolute; right: 8px; top: 7px;}
+.pro-info .carousel {position: relative;}
+.pro-info .kv {height: 200px; width: 100%; overflow: hidden; position: relative;}
+.pro-info .kv ul {height: 200px;}
+.pro-info .kv ul li {height: 200px; width: 100%; float: left; text-align: center}
+.pro-info .kv li img {max-height: 200px; max-width: 100%;}
+.pro-info .carousel-prev {text-indent: -999em; height: 40px; width: 30px; position: absolute; left: 0; top: 80px; z-index: 4;
+background-image: url(../img/pro-info/prev.png);
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: auto 40px;}
+.pro-info .carousel-next {text-indent: -999em; height: 40px; width: 30px; position: absolute; right: 0; top: 80px; z-index: 4;
+background-image: url(../img/pro-info/next.png);
+background-position: right center;
+background-repeat: no-repeat;
+background-size: auto 40px;}
+.pro-info .carousel-icons-list {text-align: center; width: 100%; height: 10px; position: absolute; z-index: 4; bottom: 0; left: 0}
+.pro-info .carousel-icons-list li {display: inline-block; width: 10px; height: 10px; border-radius: 5px; background: #bbb; text-indent: -999em; margin: 0 3px; -webkit-box-shadow: 0 0 1px #bbb}
+.pro-info .carousel-icons-list li.active {background: #666; -webkit-box-shadow: 0 0 1px #666}
+.pro-info .detail {padding: 10px 0 0;}
+.pro-info .detail .name {font-size: 16px; color: #000; padding: 0 5px 0.8em;}
+.pro-info .sum {position: relative; padding-bottom: 10px;}
+.pro-info .sum .price {color: #f14f34; font-size: 20px; padding: 0 0 0 8px}
+.pro-info .sum del {font-size: 16px; color: #999; padding: 3px 0 0 5px}
+.pro-info .sum .buy img {position: absolute; right: 5px; top: 0; width: 40%;}
+.pro-info .sum .tip {font-size: 14px; color: #999; padding: 3px 0 0 8px}
+.pro-info .other-info {height: 32px; line-height: 32px; border-top: 1px solid #bbb; border-bottom: 1px solid #bbb; background: #f9f9f9; color: #666;}
+.pro-info .other-info .li {width: 50%; text-align: center; float: left; font-size: 12px; position: relative;}
+.pro-info .other-info .li:nth-child(1):before {position: absolute; content: ''; width: 1px; height: 32px; right: 0; top: 0; background: #bbb;}
+.pro-info .other-info .li:nth-child(1) .w {padding-left: 20px;
+background-image: url(../img/pro-info/p.jpg);
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: auto 14px;}
+.pro-info .other-info .li:nth-child(2) .w {padding-left: 16px;
+background-image: url(../img/pro-info/c.jpg);
+background-position: 0 -1px;
+background-repeat: no-repeat;
+background-size: auto 14px;}
+.pro-info .pro-detail {height: 50px; font-size: 16px; color: #333; line-height: 50px; text-indent: 42px;
+background-image: -moz-linear-gradient(top, #fefefe, #d2d2d2);
+background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(1, #d2d2d2)); border-bottom: 1px solid #000; position: relative;}
+.pro-info .pro-detail:before {position: absolute; content: ''; width: 15px; height: 25px; left: 22px; top: 17px;background-image: url(../img/pro-info/f.jpg);
+background-position: 0 0;
+background-repeat: no-repeat;
+background-size: 15px auto;}
+
+/*cart*/
+.cart {}
+.cart header {position: absolute; z-index: 2; width: 100%;}
+#cart-wrapper {position: absolute; top: 45px; bottom: 50px; overflow:auto; width: 100%; z-index:1;
+background-image: url(../img/common/bg.jpg);
+background-position: 0 0;
+background-repeat: repeat;
+background-size: 22px auto;
+}
+#cart-wrapper .scroller {position:absolute; z-index:1; width: 100%; text-align: center; display: table; height: 100%}
+.cart .empty-img {display: table-cell; vertical-align: middle}
+.cart .empty-img img {width: 50%;}
+
+/*knowledge*/
+.knowledge {}
+.knowledge header {position: absolute; z-index: 2; width: 100%;}
+#knowledge-wrapper {position: absolute; top: 45px; bottom: 50px; overflow:auto; width: 100%; z-index:1;
+background-image: url(../img/common/bg.jpg);
+background-position: 0 0;
+background-repeat: repeat;
+background-size: 22px auto;
+}
+#knowledge-wrapper .scroller {position:absolute; z-index:1; width: 100%;}
+.knowledge section {width: 80%; border: 1px solid #bbb; border-radius: 5px; margin: 15px auto; padding: 10px; background: #fff; text-align: left}
+.knowledge section strong {font-size: 16px; color: #444; line-height: 1.6em;}
+.knowledge section ul li {display: inline; font-size: 14px; padding-right: 1em; white-space: nowrap}
+.knowledge section ul li a {color: #999; position: relative;}
+.knowledge section ul li a.new:before {position: absolute; content: 'NEW'; left: 90%; top: -30%; background: #ff9324; color: #fff; font-size: 8px; padding: 0 1px; border-radius: 3px}
+.knowledge section ul li a.hot:before {position: absolute; content: 'HOT'; left: 90%; top: -30%; background: #fc4210; color: #fff; font-size: 8px; padding: 0 1px; border-radius: 3px}
+
+/*knowledge-info*/
+.knowledge-info {}
+.knowledge-info header {position: absolute; z-index: 2; width: 100%;}
+#knowledge-info-wrapper {position: absolute; top: 45px; bottom: 50px; overflow:auto; width: 100%; z-index:1;
+background-image: url(../img/common/bg.jpg);
+background-position: 0 0;
+background-repeat: repeat;
+background-size: 22px auto;
+background: #e2e2e2}
+#knowledge-info-wrapper .scroller {position:absolute; z-index:1; width: 100%;}
+.knowledge-info section {width: 80%; border: 1px solid #bbb; border-radius: 5px; margin: 15px auto; padding: 10px; background: #fff; text-align: left}
+.knowledge-info section strong {font-size: 14px; color: #f14f34; line-height: 1.6em;}
+.knowledge-info section p {color: #666; font-size: 12px;}
+
+/*user-info*/
+.user-info {}
+.user-info header {position: absolute; z-index: 2; width: 100%;}
+#user-info-wrapper {position: absolute; top: 45px; bottom: 50px; overflow:auto; width: 100%; z-index:1;
+background-image: url(../img/common/bg.jpg);
+background-position: 0 0;
+background-repeat: repeat;
+background-size: 22px auto;
+}
+#user-info-wrapper .scroller {position:absolute; z-index:1; width: 100%;}
+.user-info .reg-btn {position: absolute; right: 8px; top: 7px;}
+.user-info section {width: 90%; border: 1px solid #bbb; border-radius: 5px; margin: 15px auto 5px; background: #fff; text-align: left}
+.user-info section label {display: block; line-height: 30px; height: 30px; padding: 5px 0 5px 10px;}
+.user-info section label:nth-child(1) {border-bottom: 1px solid #bbb}
+.user-info section label span {font-size: 14px; color: #444;}
+.user-info section label input {border: 0 none; font-size: 14px; height: 28px; line-height: 28px; width: 60%}
+.user-info .sub-box {position: relative; width: 90%; margin: 0 auto;}
+.user-info p.remember {padding-left: 5px; color: #000; font-size: 14px}
+.user-info .login-btn {position: absolute; right: 0; top: 0; padding: 0 20px; font-size: 16px}
+.user-info h2 {margin-top: 60px; font-size: 16px; color: #f14f34; padding-left: 5%}
+.user-info  .joint {width: 90%; border: 1px solid #bbb; border-radius: 5px; margin: 5px auto; background: #fff; text-align: left}
+.user-info  .joint li {height: 40px; line-height: 40px; border-bottom: 1px solid #bbb; color: #444; font-size: 14px; text-indent: 45px;}
+.user-info  .joint li:nth-child(3) {border-bottom: 0 none;}
+.user-info  .joint li.z {
+background-image: url(../img/user-info/z.jpg);
+background-position: 10px 10px;
+background-repeat: no-repeat;
+background-size: 22px auto;}
+.user-info  .joint li.s {
+background-image: url(../img/user-info/s.jpg);
+background-position: 10px 10px;
+background-repeat: no-repeat;
+background-size: 22px auto;}
+.user-info  .joint li.t {
+background-image: url(../img/user-info/t.jpg);
+background-position: 10px 10px;
+background-repeat: no-repeat;
+background-size: 22px auto;}
+
+/*more*/
+.more {}
+.more header {position: absolute; z-index: 2; width: 100%;}
+#more-wrapper {position: absolute; top: 45px; bottom: 50px; overflow:auto; width: 100%; z-index:1;
+background-image: url(../img/common/bg.jpg);
+background-position: 0 0;
+background-repeat: repeat;
+background-size: 22px auto;
+}
+#more-wrapper .scroller {position:absolute; z-index:1; width: 100%;}
+.more h2 {padding: 5px 0; font-size: 16px; color: #f14f34; padding-left: 5%}
+.more .section {width: 90%; border: 1px solid #bbb; border-radius: 5px; margin: 0 auto 20px; background: #fff; text-align: left}
+.more .section li {height: 40px; line-height: 40px; border-bottom: 1px solid #bbb; color: #444; font-size: 14px; text-indent: 1em;}
+.more .section li p {margin: 0 5% 0 0}
+.more .section li:last-child {border-bottom: 0 none}
+.more .hastag li p{background-image: url(../img/common/arr.jpg);
+background-position: right center;
+background-repeat: no-repeat;
+background-size: 10px auto;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
