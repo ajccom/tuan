@@ -16,7 +16,7 @@ Also, you can use D1ma.route.del(hash) to delete one route rule.
 
 After create your static html file, you can use template to replace some place where you will fill in your data.
 
-> <a href="<%=obj.href%>" class="<%=obj.klass%>"><img src="<%=obj.src%>" /></a>
+> \<a href="\<\%=obj.href\%\>" class="\<\%=obj.klass\%\>"\>\<img src="\<\%=obj.src\%\>" \/\>\<\/a\>
 
 Template support logic like for、 if else.
 
